@@ -147,10 +147,38 @@ void Compare()
 	if (a == b)
 		cout << "==" << endl;
 }
+// 9498번 문제 ( 성적 분류 )
+void Grade()
+{
+	int a;
+	cin >> a;
+
+	if (a >= 90)
+		cout << "A";
+	else if (a >= 80)
+		cout << "B";
+	else if (a >= 70)
+		cout << "C";
+	else if (a >= 60)
+		cout << "D";
+	else
+		cout << "F";
+
+}
+// 2753번 문제 (윤달)
+void LeapMonth()
+{
+	int a;
+	cin >> a;
+
+	cout << ((a % 4 == 0) & ((a % 100 != 0) | (a % 400 == 0))) << endl;
+}
 #pragma endregion
 
 int main()
 {
+
+
 	return 0;
 }
 
