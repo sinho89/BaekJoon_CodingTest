@@ -173,12 +173,113 @@ void LeapMonth()
 
 	cout << ((a % 4 == 0) & ((a % 100 != 0) | (a % 400 == 0))) << endl;
 }
+// 14681번 문제 (사분면)
+void Quadrant()
+{
+	int a, b;
+	cin >> a >> b;
+
+	if ((a > 0) & (b > 0))
+		cout << 1 << endl;
+	else if ((a < 0) & (b > 0))
+		cout << 2 << endl;
+	else if ((a < 0) & (b < 0))
+		cout << 3 << endl;
+	else if ((a > 0) & (b < 0))
+		cout << 4 << endl;
+
+}
+// 2884번 문제 (알람 시계)
+void AlamClock()
+{
+	int a, b;
+	cin >> a >> b;
+
+	if ((a < 0) | (a > 23))
+		return;
+	if ((a < 0) | (a > 59))
+		return;
+
+
+	if ((a == 0) & (b < 45))
+		a = 24;
+
+	if (b == 0)
+	{
+		a--;
+		b = 60;
+	}
+
+	if (b < 45)
+	{
+		a--;
+		b = 60 + (b - 45);
+	}
+	else
+		b = b - 45;
+
+	cout << a << " " << b << endl;
+
+}
+// 2525번 문제 (오븐 타이머)
+void Timer()
+{
+	int a, b, c, d, e;
+	cin >> a >> b;
+	cin >> c;
+
+	d = b + c;
+	e = d / 60;
+
+	a += e;
+
+	if (d < 60)
+		b = d;
+	else
+		b = d - (60 * e);
+
+	if (a > 23)
+		a -= 24;
+	if (b > 60)
+		b -= 60;
+
+	cout << a << " " << b << endl;
+	
+}
+// 2480번 문제 (주사위 3개)
+void DiceGame()
+{
+	int a, b, c, d;
+	cin >> a >> b >> c;
+
+	if ((a == b) && (b == c) && (c == a))
+		cout << 10000 + (a * 1000) << endl;
+	else
+	{
+		if ((a == b) || (a == c))
+			cout << 1000 + (a * 100) << endl;
+		else if ((a == b) || (b == c))
+			cout << 1000 + (b * 100) << endl;
+		else if ((c == a) || (c == b))
+			cout << 1000 + (c * 100) << endl;
+	}
+
+	if ((a != b) && (b != c) && (c != a))
+	{
+		if (a > b)
+			d = a;
+		else
+			d = b;
+		if (c > d)
+			d = c;
+
+		cout << d * 100 << endl;
+	}
+}
 #pragma endregion
 
 int main()
 {
-
-
 	return 0;
 }
 
