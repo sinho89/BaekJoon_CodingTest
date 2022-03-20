@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <vector>
 
 using namespace std;
 
@@ -277,9 +278,40 @@ void DiceGame()
 	}
 }
 #pragma endregion
+// for문 (백준 3단계)
+#pragma region BaekJoon_Level3
+// 2739번 문제 (구구단)
+void MultiTable()
+{
+	int a;
+	cin >> a;
+
+	for (int i = 1; i < 10; i++)
+		cout << a << " * " << i << " = " << a * i << endl;
+}
+// 10950번 문제 (원하는 수만큼 반복하면 결과내기)
+void RepeatSum()
+{
+	vector<int> vecResult;
+	int a, b, c;
+	cin >> a;
+
+	for (int i = 0; i < a; i++)
+	{
+		cin >> b >> c;
+		vecResult.push_back(b + c);
+	}
+
+	for (unsigned i = 0; i < vecResult.size(); i++)
+		cout << vecResult[i] << endl;
+}
+
+#pragma endregion
+
 
 int main()
 {
+	
 	return 0;
 }
 
