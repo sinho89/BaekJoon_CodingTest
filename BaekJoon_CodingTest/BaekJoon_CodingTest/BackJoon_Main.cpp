@@ -305,13 +305,24 @@ void RepeatSum()
 	for (unsigned i = 0; i < vecResult.size(); i++)
 		cout << vecResult[i] << endl;
 }
+// 8393번 문제 (누적합)
+void AccumSum()
+{
+	int a, b;
+	cin >> a;
+	b = 0;
+
+	for (int i = 1; i < a + 1; i++)
+		b += i;
+
+	cout << b << endl;
+}
 
 #pragma endregion
 
 
 int main()
 {
-	
 	return 0;
 }
 
