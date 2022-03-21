@@ -516,10 +516,71 @@ void CycleLength()
 	cout << c << endl;
 }
 #pragma endregion
+// 배열 (백준 5단계)
+#pragma region BaekJoon_Level5
+// 10818번 문제 (최소,최대값 구하기)
+void MinMax()
+{
+	vector<int> vecResult;
+	int a, b, c, d;
+	cin.tie(NULL);
+	cin >> a;
+
+	for (int i = 0; i < a; i++)
+	{
+		cin >> b;
+		vecResult.push_back(b);
+	}
+
+	c = vecResult[0];
+	d = vecResult[0];
+
+	for (unsigned i = 0; i < vecResult.size(); i++)
+	{
+		if (c > vecResult[i])
+			c = vecResult[i];
+
+		if (d < vecResult[i])
+			d = vecResult[i];
+	}
+
+	cout << c << " " << d;
+}
+// 2562번 문제 (최대값 구하기)
+void Max()
+{
+	int a = 0, b = 0, c = 0;
+	int iArray[9];
+
+	cin.tie(NULL);
+	for (int i = 0; i < 9; i++)
+	{
+		cin >> a;
+		iArray[i] = a;
+	}
+
+	for (int i = 0; i < 9; i++)
+	{
+		if (b < iArray[i])
+		{
+			b = iArray[i];
+			c = int(i + 1);
+		}
+	}
+
+	cout << b << "\n" << c;
+}
+// 2577번 문제 (숫자 갯수)
+void CountNumber()
+{
+	
+}
+#pragma endregion
 
 
 int main()
 {
+
 	return 0;
 }
 
