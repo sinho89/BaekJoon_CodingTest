@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -317,7 +318,203 @@ void AccumSum()
 
 	cout << b << endl;
 }
+// 15552번 문제 (빠른 A+B)
+void FastSum()
+{
+	int a, b, c;
+	vector<int> vecResult;
 
+	cin.tie(NULL);
+	cin >> a;
+
+	for (int i = 0; i < a; i++)
+	{
+		cin >> b >> c;
+		vecResult.push_back(b + c);
+	}
+
+	for (unsigned int i = 0; i < vecResult.size(); i++)
+		cout << vecResult[i] << "\n";
+
+}
+// 2741번 문제 (전체 출력)
+void FullOutput()
+{
+	int a;
+	cin.tie(NULL);
+	cin >> a;
+
+	for (int i = 1; i < a + 1; i++)
+		cout << i << "\n";
+}
+// 2742번 문제 (역순 출력)
+void ReverseOutPut()
+{
+	int a;
+	cin.tie(NULL);
+	cin >> a;
+
+	for (int i = a; i > 0; i--)
+		cout << i << "\n";
+}
+// 11021번 문제 (다중 데이터 연산 출력1)
+void DatasSum()
+{
+	vector<int> vecResult;
+	int a, b, c;
+	cin.tie(NULL);
+	cin >> a;
+
+	for (int i = 0; i < a; i++)
+	{
+		cin >> b >> c;
+		vecResult.push_back(b + c);
+	}
+
+	for (unsigned int i = 0; i < vecResult.size(); i++)
+		cout << "Case #" << i + 1 << ": " << vecResult[i] << "\n";
+}
+// 11022번 문제 (데이터 연산 출력 심화)
+void DatasSumPlus()
+{
+	vector<string> vecResult;
+	int a, b, c;
+	cin >> a;
+
+	for (int i = 0; i < a; i++)
+	{
+		cin >> b >> c;
+		string str = to_string(b) + " + " + to_string(c) + " = " + to_string(b + c);
+		vecResult.push_back(str);
+	}
+
+	for (unsigned int i = 0; i < vecResult.size(); i++)
+		cout << "Case #" << i + 1 << ": " << vecResult[i] << "\n";
+}
+// 2438번 문제 (별 찍기)
+void DrawStars()
+{
+	int a;
+	cin.tie(NULL);
+	cin >> a;
+
+	for (int i = 0; i < a; i++)
+	{
+		for (int j = 0; j < i + 1; j++)
+			cout << "*";
+
+		cout << "\n";
+	}
+}
+// 2439번 문제 (별 찍기2)
+void DrawStars2()
+{
+	int a;
+	cin.tie(NULL);
+	cin >> a;
+
+	for (int i = 0; i < a; i++)
+	{
+		for (int j = 0; j < a; j++)
+		{
+			if (i > (a - j) - 2)
+				cout << "*";
+			else
+				cout << " ";
+		}
+		cout << "\n";
+	}
+}
+// 10871번 문제 (작은수 찾기)
+void MinValueFinder()
+{
+	vector<int> vecResult;
+	int a, b;
+	cin.tie(NULL);
+	cin >> a >> b;
+
+	for (int i = 0; i < a; i++)
+	{
+		int c;
+		cin >> c;
+		vecResult.push_back(c);
+	}
+
+	for (unsigned int i = 0; i < vecResult.size(); i++)
+	{
+		if (vecResult[i] < b)
+			cout << vecResult[i] << " ";
+	}
+}
+
+#pragma endregion
+// while문 (백준 4단계)
+#pragma region BaekJoon_Level4
+// 10952번 문제 (A+B)
+void WhileSum()
+{
+	vector<int> vecResult;
+
+	int a, b;
+	cin.tie(NULL);
+
+	while (true)
+	{
+		cin >> a >> b;
+
+		if ((a == 0) & (b == 0))
+			break;
+
+		vecResult.push_back(a + b);
+	}
+
+	for (unsigned int i = 0; i < vecResult.size(); i++)
+		cout << vecResult[i] << "\n";
+}
+// 10951번 문제 (eof A+B)
+void EofWhileSum()
+{
+	vector<int> vecResult;
+
+	int a, b;
+	cin.tie(NULL);
+
+	while (!(cin >> a >> b).eof())
+		vecResult.push_back(a + b);
+
+
+	for (unsigned int i = 0; i < vecResult.size(); i++)
+		cout << vecResult[i] << "\n";
+}
+// 1110번 문제 (사이클 길이 구하기)
+void CycleLength()
+{
+	int a, b, c;
+	cin.tie(NULL);
+	cin >> a;
+
+	if (a < 10)
+		a *= 10;
+
+	b = a;
+	c = 0;
+
+	while (true)
+	{
+		int d, e;
+
+		d = a / 10;
+		e = a % 10;
+
+		a = (e * 10) + ((d + e) % 10);
+
+		c++;
+		if (b == a)
+			break;
+	}
+
+	cout << c << endl;
+}
 #pragma endregion
 
 
