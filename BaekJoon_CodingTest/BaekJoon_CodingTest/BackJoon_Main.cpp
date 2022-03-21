@@ -573,14 +573,196 @@ void Max()
 // 2577번 문제 (숫자 갯수)
 void CountNumber()
 {
-	
+	int a, b, c, d;
+	int e[10] = { 0,0,0,0,0,0,0,0,0,0 };
+	string str;
+	cin.tie(NULL);
+	cin >> a >> b >> c;
+
+	d = a * b * c;
+
+	str = to_string(d);
+
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			if (str[j] == (char)(i + 48))
+				e[i]++;
+		}
+	}
+
+	for (int i = 0; i < 10; i++)
+		cout << e[i] << endl;
+}
+// 3052번 문제 (다른 데이터 갯수 구하기)
+void DiffDataCount()
+{
+	int a[10] = { 0,0,0,0,0,0,0,0,0,0 };
+	int b = 0;
+	cin.tie(NULL);
+	for (int i = 0; i < 10; i++)
+	{
+		int d = 0;
+		cin >> d;
+		a[i] = d % 42;
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = i + 1; j < 10; j++)
+		{
+			if (a[i] == a[j])
+				a[i] = -1;
+		}
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (a[i] != -1)
+			b++;
+	}
+
+
+	cout << b << "\n";
+}
+// 1546번 문제 (평균조작)
+void FakeAverage()
+{
+	double* a;
+	int b;
+	double d = 0, e = 0;
+
+	cin.tie(NULL);
+	cout << fixed;
+	cout.precision(8);
+
+	cin >> b;
+
+	a = new double[b];
+
+	for (int i = 0; i < b; i++)
+	{
+		double c;
+		cin >> c;
+		a[i] = c;
+	}
+
+	for (int i = 0; i < b; i++)
+	{
+		if (d < a[i])
+			d = a[i];
+	}
+
+	for (int i = 0; i < b; i++)
+	{
+		e += (a[i] / d) * 100.0f;
+	}
+
+	cout << e / b << "\n";
+}
+// 8958번 문제 (OX퀴즈)
+void OXQuiz()
+{
+	int a;
+	string* b;
+	int* d;
+
+	cin.tie(NULL);
+	cin >> a;
+
+	b = new string[a];
+	d = new int[a];
+
+	for (int i = 0; i < a; i++)
+	{
+		char c[80];
+		cin >> c;
+		b[i] = c;
+		d[i] = 0;
+	}
+
+	for (int i = 0; i < a; i++)
+	{
+		int e = 0;
+		for (int j = 0; j < 80; j++)
+		{
+			if (b[i][j] == '\0')
+				break;
+
+			if (b[i][j] == 'O')
+				e++;
+			else if (b[i][j] == 'X')
+				e = 0;
+
+			d[i] += e;
+		}
+	}
+
+	for (int i = 0; i < a; i++)
+		cout << d[i] << "\n";
+}
+// 4344번 문제 (평균넘는수)
+void HighAverage()
+{
+	float** a;
+	int b, c;
+	float e = 0.0f;
+	float* result;
+
+	cin.tie(NULL);
+	cin >> b;
+	cout << fixed;
+	cout.precision(3);
+
+	a = new float* [b];
+
+	for (int i = 0; i < b; i++)
+	{
+		cin >> c;
+		a[i] = new float[c + 1];
+		a[i][0] = (float)c;
+		float d;
+
+		for (int j = 1; j < c + 1; j++)
+		{
+			cin >> d;
+			a[i][j] = d;
+		}
+
+		c = 0;
+		d = 0;
+	}
+
+	for (int i = 0; i < b; i++)
+	{
+		e = 0.0f;
+
+		for (int j = 1; j < a[i][0] + 1; j++)
+		{
+			e += a[i][j];
+		}
+
+		e /= a[i][0];
+		int f = 0;
+		result = new float[b];
+
+		for (int j = 1; j < a[i][0] + 1; j++)
+		{
+			if (e < a[i][j])
+				f++;
+		}
+
+		result[i] = (f / a[i][0]) * 100.0f;
+
+		cout << result[i] << "%" << "\n";
+	}
 }
 #pragma endregion
 
 
 int main()
 {
-
 	return 0;
 }
 
