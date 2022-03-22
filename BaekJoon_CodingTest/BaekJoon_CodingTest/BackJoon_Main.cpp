@@ -759,7 +759,50 @@ void HighAverage()
 	}
 }
 #pragma endregion
+// 함수 (백준 6단계)
+#pragma region BaekJoon_Level6
+// 15596번 문제 (정수 N개의 합)
+long long sum(vector<int>& a)
+{
+	long long sum = 0;
+	for (unsigned int i = 0; i < a.size(); i++)
+		sum += a[i];
 
+	return sum;
+}
+// 4673번 문제 (셀프넘버)
+void SelfNumber(int n)
+{
+	bool* a = new bool[n] { false };
+	int b = 0, c = 0;
+
+	for (int i = 1; i <= n; i++)
+	{
+		c = b = i;
+
+		if (a[i - 1] == false)
+			cout << i << "\n";
+
+		while (true)
+		{
+			c += b % 10;
+			b /= 10;
+
+			if (b <= 0)
+				break;
+		}
+
+		if ((c - 1) < 10000)
+			a[c - 1] = true;
+	}
+}
+// 1065번 문제 (한수(등차수열관련문제))
+void Arithmetic(int n)
+{
+
+}
+
+#pragma endregion
 
 int main()
 {
