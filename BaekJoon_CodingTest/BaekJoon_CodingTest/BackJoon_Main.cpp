@@ -799,8 +799,33 @@ void SelfNumber(int n)
 // 1065번 문제 (한수(등차수열관련문제))
 void Arithmetic(int n)
 {
+	int a = 0;
+	int b, c, d;
+	for (int i = 1; i <= n; i++)
+	{
+		if (i < 100)
+		{
+			++a;
+			continue;
+		}
 
+		if (i == 1000)
+			continue;
+
+		d = i % 10;
+		c = (i / 10) % 10;
+		b = ((i / 10) / 10) % 10;
+
+		if (((d-c) == (c-b)) || ((b-c) == (c-d)))
+			++a;
+	}
+
+	cout << a;
 }
+
+#pragma endregion
+// 문자열 (백준 7단계)
+#pragma region BaekJoon_Level7
 
 #pragma endregion
 
