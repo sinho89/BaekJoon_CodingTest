@@ -826,11 +826,56 @@ void Arithmetic(int n)
 #pragma endregion
 // 문자열 (백준 7단계)
 #pragma region BaekJoon_Level7
+// 11654번 문제 (아스키코드)
+void AsciiCode()
+{
+	char a;
 
+	cin.tie(NULL);
+	cin >> a;
+
+	cout << int(a) << endl;
+}
+// 11720번 문제 (숫자의 합)
+void TotalSum()
+{
+	char* a;
+	int b = 0, c = 0, d = 0;
+
+	cin.tie(NULL);
+	cin >> b;
+
+	a = new char[b];
+
+	cin >> a;
+
+	for (int i = 0; i < b; i++)
+		d += a[i] - '0';
+
+	cout << d << endl;
+}
+// 10809번 문제 (알파벳 찾기)
+void FindAlphabet()
+{
+
+}
 #pragma endregion
 
 int main()
 {
+	/*char a[100];
+	int b = 0, c = 0;
+	bool IsCheck = false;
+
+	cin.tie(NULL);
+	cin >> a;
+
+
+	for (int i = 97; i < 123; i++)
+	{
+		cout << *strchr(a, char(i)) << " ";
+	}*/
+
 	return 0;
 }
 
