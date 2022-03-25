@@ -871,13 +871,51 @@ void FindAlphabet()
 		if (b[c] == -1) { b[c] = i; }
 	}
 
-	for (auto& a : b)
+	for (const auto& a : b)
 		cout << a << " ";
+}
+// 2675번 문제 (문자열 반복 문제)
+void RepeatString()
+{
+	int a = 0;
+	int b = 0;
+	string c = "";
+	string* d;
+
+	cin.tie(NULL);
+	cin >> a;
+
+	d = new string[a];
+
+	for (int i = 0; i < a; i++)
+	{
+		cin >> b >> c;
+
+		for (const auto& a : c)
+		{
+			for (int j = 0; j < b; j++)
+				d[i].push_back(a);
+		}
+	}
+
+	for (int i = 0; i < a; i++)
+		cout << d[i] << endl;
+}
+// 1157번 문제 (가장 많은 수의 알파벳)
+void MostUseSpell()
+{
 }
 #pragma endregion
 
 int main()
 {
+	string a = "";
+
+	cin.tie(NULL);
+	cin >> a;
+
+	int b = a.size();
+	int* c = new int[b];
 
 	return 0;
 }
