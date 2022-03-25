@@ -2,6 +2,7 @@
 #include <cmath>
 #include <vector>
 #include <string>
+#include <stdio.h>
 
 using namespace std;
 
@@ -857,24 +858,26 @@ void TotalSum()
 // 10809번 문제 (알파벳 찾기)
 void FindAlphabet()
 {
+	char a[101] = {};
+	int b[26] = {};
+	fill_n(b, 26, -1);
 
+	cin.tie(NULL);
+	cin >> a;
+
+	for (long unsigned int i = 0; i < strlen(a); i++)
+	{
+		int c = a[i] - 97;
+		if (b[c] == -1) { b[c] = i; }
+	}
+
+	for (auto& a : b)
+		cout << a << " ";
 }
 #pragma endregion
 
 int main()
 {
-	/*char a[100];
-	int b = 0, c = 0;
-	bool IsCheck = false;
-
-	cin.tie(NULL);
-	cin >> a;
-
-
-	for (int i = 97; i < 123; i++)
-	{
-		cout << *strchr(a, char(i)) << " ";
-	}*/
 
 	return 0;
 }
