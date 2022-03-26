@@ -904,19 +904,75 @@ void RepeatString()
 // 1157번 문제 (가장 많은 수의 알파벳)
 void MostUseSpell()
 {
+	char a[1000001] = "";
+
+	cin.tie(NULL);
+	cin >> a;
+
+	int b[26];
+	int c = 0, d = 0;
+	long unsigned int f = strlen(a);
+	bool IsCheck = false;
+
+	fill_n(b, 26, 0);
+
+	for (long unsigned int i = 0; i < f; i++)
+	{
+		int e = 0;
+
+		if ((a[i] >= 97) && (a[i] <= 122))
+			e = a[i] - 97;
+		if ((a[i] >= 65) && (a[i] <= 90))
+			e = a[i] - 65;
+
+		if (e >= 0 && e < 26)
+			b[e]++;
+	}
+
+	for (int i = 0; i < 26; i++)
+	{
+		if (b[i] > c)
+		{
+			c = b[i];
+			d = i;
+		}
+	}
+
+	for (int i = 0; i < 26; i++)
+	{
+		if (c == b[i] && d != i)
+			IsCheck = true;
+	}
+
+	if (IsCheck)
+		cout << "?";
+	else
+		cout << (char)(d + 65);
+}
+// 1152번 문제 (단어 갯수 구하기)
+void CountWord()
+{
+
 }
 #pragma endregion
 
 int main()
 {
-	string a = "";
+	char a[1000001] = "";
 
 	cin.tie(NULL);
-	cin >> a;
+	cin.getline(a, 1000001);
+	int b = 0;
+	long unsigned int c = strlen(a);
 
-	int b = a.size();
-	int* c = new int[b];
+	for (long unsigned int i = 0; i < c; i++)
+	{
+		if (a[i] == ' ' || a[i] == '\0')
+			b++;
+	}
 
+	cout << b;
+	
 	return 0;
 }
 
