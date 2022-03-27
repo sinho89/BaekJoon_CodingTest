@@ -952,12 +952,6 @@ void MostUseSpell()
 // 1152번 문제 (단어 갯수 구하기)
 void CountWord()
 {
-
-}
-#pragma endregion
-
-int main()
-{
 	char a[1000001] = "";
 
 	cin.tie(NULL);
@@ -967,12 +961,59 @@ int main()
 
 	for (long unsigned int i = 0; i < c; i++)
 	{
-		if (a[i] == ' ' || a[i] == '\0')
-			b++;
+		if (((a[i + 1] == '\0') && a[i] != ' ') || (a[i + 1] == ' '))
+			++b;
 	}
 
 	cout << b;
-	
+}
+// 2908번 문제 (역수 크기 비교)
+void ReverseCompare()
+{
+	char a[4] = {}, b[4] = {};
+	int c = 0;
+
+	cin.tie(NULL);
+	cin >> a >> b;
+
+	long unsigned int d = strlen(a);
+	long unsigned int e = strlen(b);
+	int f = 0, g = 0;
+
+	for (long unsigned int i = 0; i < (d / 2); i++)
+	{
+		char temp = a[i];
+		a[i] = a[d - i - 1];
+		a[d - i - 1] = temp;
+	}
+
+	f = atoi(a);
+
+	for (long unsigned int i = 0; i < (e / 2); i++)
+	{
+		char temp = b[i];
+		b[i] = b[e - i - 1];
+		b[e - i - 1] = temp;
+	}
+
+	g = atoi(b);
+
+	if (f > g)
+		g = f;
+
+	cout << g;
+}
+// 5622번 문제 (다이얼) ★
+void Dial()
+{
+
+}
+#pragma endregion
+
+
+int main()
+{
+
 	return 0;
 }
 
