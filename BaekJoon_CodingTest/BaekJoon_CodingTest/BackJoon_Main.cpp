@@ -1,10 +1,4 @@
-#include <iostream>
-#include <cmath>
-#include <vector>
-#include <string>
-#include <stdio.h>
-
-using namespace std;
+#include "Defines.h"
 
 // 입출력과 사칙연산 ( 백준 1단계 )
 #pragma region BaekJoon_Level1
@@ -1006,8 +1000,48 @@ void ReverseCompare()
 // 5622번 문제 (다이얼) ★
 void Dial()
 {
+	multimap<int, char> mulmap;
+
+	int a = 0, b = 0, e = 0;
+	char c[16] = "";
+
+	for (int i = 0; i < 8; i++)
+	{
+		if (i == 5 || i == 7)
+			b = 4;
+		else
+			b = 3;
+
+		for (int j = 0; j < b; j++)
+			mulmap.insert(make_pair(i + 2, char(65 + (i * 3) + j + a)));
+
+		if (b == 4)
+			++a;
+	}
+
+	cin.tie(NULL);
+	cin >> c;
+	long unsigned int d = strlen(c);
+
+	for (long unsigned int i = 0; i < d; i++)
+	{
+		for (const auto& a : mulmap)
+		{
+			if (a.second == c[i])
+			{
+				e += a.first + 1;
+			}
+		}
+	}
+
+	cout << e;
+}
+// 2941번 문제 (크로아티아 알파벳) ★
+void CroatiaSpell()
+{
 
 }
+
 #pragma endregion
 
 
