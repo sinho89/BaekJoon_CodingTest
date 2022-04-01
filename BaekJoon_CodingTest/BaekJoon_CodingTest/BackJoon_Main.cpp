@@ -1047,6 +1047,36 @@ void CroatiaSpell()
 
 int main()
 {
+	multimap<int, string> spellmap;
+
+	spellmap.insert(make_pair(2, "c="));
+	spellmap.insert(make_pair(2, "c-"));
+	spellmap.insert(make_pair(3, "dz="));
+	spellmap.insert(make_pair(2, "d-"));
+	spellmap.insert(make_pair(2, "lj"));
+	spellmap.insert(make_pair(2, "nj"));
+	spellmap.insert(make_pair(2, "s="));
+	spellmap.insert(make_pair(2, "z="));
+
+	string a = "";
+	int c = 0, d = 0, e = 0, f = 0;
+	
+	cin.tie(NULL);
+	cin >> a;
+
+	for (const auto& b : spellmap)
+	{
+		e = a.find(b.second, c);
+		if (a.npos != e)
+		{
+			d++;
+		}
+	}
+
+	cout << d;
+
+
+
 
 	return 0;
 }
